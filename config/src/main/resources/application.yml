@@ -17,10 +17,14 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/zhangxd1989/spring-boot-cloud
+          uri: https://github.com/realmadred/spring-boot-cloud
           search-paths: config-repo
+          basedir: /usr/local
   rabbitmq:
     host: rabbitmq
+    username: feng
+    password: feng
+    port: 5600
 
 security:
   user:

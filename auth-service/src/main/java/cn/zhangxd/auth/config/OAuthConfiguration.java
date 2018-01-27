@@ -87,8 +87,7 @@ public class OAuthConfiguration extends AuthorizationServerConfigurerAdapter {
             auth.jdbcAuthentication().dataSource(dataSource)
                     .withUser("dave").password("secret").roles("USER")
                     .and()
-                    .withUser("anil").password("password").roles("ADMIN")
-            ;
+                    .withUser("anil").password("password").roles("ADMIN");
         }
     }
 
