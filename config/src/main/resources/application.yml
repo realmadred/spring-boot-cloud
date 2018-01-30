@@ -25,6 +25,9 @@ spring:
     username: feng
     password: feng
     port: 5600
+    cache:
+      channel:
+        size: 100
 
 security:
   user:

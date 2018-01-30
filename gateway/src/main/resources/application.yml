@@ -1,0 +1,10 @@
+spring:
+  rabbitmq:
+    username: feng
+    password: feng
+    port: 5600
+    host: rabbitmq
+    cache:
+      channel:
+        size: 100
+
