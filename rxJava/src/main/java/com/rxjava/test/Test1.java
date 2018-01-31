@@ -102,14 +102,18 @@ class Test1 {
         };
 
         subscriber = new Subscriber<Integer>() {
+            Subscription chche = null;
             @Override
             public void onSubscribe(Subscription s) {
                 System.out.println("onSubscribe");
-                s.request(128);
+                chche = s;
+                s.request(1);
             }
             @Override
             public void onNext(Integer integer) {
                 System.out.println("onNext: " + integer);
+                // 继续拉取
+                chche.request(1);
             }
             @Override
             public void onError(Throwable t) {
