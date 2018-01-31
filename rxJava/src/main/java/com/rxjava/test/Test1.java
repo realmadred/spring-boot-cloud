@@ -2,6 +2,7 @@ package com.rxjava.test;
 
 import com.rxjava.service.UserService;
 import io.reactivex.*;
+import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
@@ -283,6 +284,20 @@ class Test1 {
         .subscribeOn(Schedulers.io())
         .observeOn(Schedulers.computation())
         .subscribe(subscribe);
+    }
+
+    @Test
+    void testMerge() {
+        //和 concat 的区别在于，不用等到 发射器 A 发送完所有的事件再进行发射器 B 的发送
+        Observable.merge(Observable.just(1,2), Observable.just(3, 4, 5))
+                .subscribe(System.out::print);
+    }
+
+    @Test
+    void testConcat() {
+        //一个一个的发送完成
+        Observable.concat(Observable.just(1,2), Observable.just(3, 4, 5))
+                .subscribe(System.out::print);
     }
 
 }
