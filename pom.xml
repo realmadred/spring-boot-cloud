@@ -26,6 +26,7 @@
         <module>svca-service</module>
         <module>svcb-service</module>
         <module>zipkin</module>
+        <module>rxJava</module>
     </modules>
 
     <properties>

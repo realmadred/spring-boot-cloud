@@ -21,6 +21,13 @@ ribbon:
 spring:
   rabbitmq:
     host: rabbitmq
+    username: feng
+    password: feng
+    port: 5672
+    cache:
+      channel:
+        size: 100
+
   sleuth:
     sampler:
       percentage: 1

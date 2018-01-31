@@ -43,16 +43,13 @@ public class OAuthConfiguration extends AuthorizationServerConfigurerAdapter {
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints)
             throws Exception {
-        endpoints
-                .authenticationManager(auth)
-                .tokenStore(tokenStore())
-        ;
+        endpoints.authenticationManager(auth)
+                .tokenStore(tokenStore());
     }
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients)
             throws Exception {
-
         clients.jdbc(dataSource)
                 .passwordEncoder(passwordEncoder)
                 .withClient("client")
@@ -70,9 +67,7 @@ public class OAuthConfiguration extends AuthorizationServerConfigurerAdapter {
                 .withClient("svcb-service")
                 .secret("password")
                 .authorizedGrantTypes("client_credentials", "refresh_token")
-                .scopes("server")
-        ;
-
+                .scopes("server");
     }
 
     @Configuration
@@ -87,7 +82,7 @@ public class OAuthConfiguration extends AuthorizationServerConfigurerAdapter {
             auth.jdbcAuthentication().dataSource(dataSource)
                     .withUser("dave").password("secret").roles("USER")
                     .and()
-                    .withUser("anil").password("password").roles("ADMIN");
+                    .withUser("feng").password("password").roles("ADMIN");
         }
     }
 

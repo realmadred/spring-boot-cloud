@@ -20,6 +20,7 @@ public class ServiceAController {
 
     @Autowired
     EurekaDiscoveryClient discoveryClient;
+
     @Autowired
     private ServiceBClient serviceBClient;
 
