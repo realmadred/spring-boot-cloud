@@ -8,3 +8,17 @@ spring:
         size: 100
     host: rabbitmq
 
+server:
+  port: 8080
+
+name: feng
+
+security:
+  oauth2:
+    client:
+      clientId: svca-service
+      clientSecret: ${security.user.password}
+      accessTokenUri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/oauth/token
+      grant-type: client_credentials
+      scope: server
+

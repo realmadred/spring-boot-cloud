@@ -30,3 +30,6 @@ security:
   user:
     name: user
     password: ${AUTH_SERVER_PASSWORD:password}
+server:
+  port: 5000
+  context-path: /uaa
