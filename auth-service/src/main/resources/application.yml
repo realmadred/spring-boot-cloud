@@ -7,4 +7,9 @@ spring:
       channel:
         size: 100
     host: rabbitmq
-
+  datasource:
+    username: root
+    password: feng
+    url: jdbc:mysql://127.0.0.1:3306/cloud?useUnicode=true&characterEncoding=UTF-8
+  jpa:
+    show-sql: true
