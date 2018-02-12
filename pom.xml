@@ -114,6 +114,7 @@
                         </execution>
                     </executions>
                     <configuration>
+                        <dockerHost>http://192.168.40.128:2375</dockerHost>
                         <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
                         <dockerDirectory>${project.basedir}/</dockerDirectory>
                         <resources>

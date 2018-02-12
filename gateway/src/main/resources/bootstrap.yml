@@ -6,6 +6,7 @@ spring:
       discovery:
         enabled: true
         service-id: config
+#      uri: http://config:8888
       fail-fast: true
       username: user
       password: ${CONFIG_SERVER_PASSWORD:password}

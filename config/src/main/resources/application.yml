@@ -20,12 +20,12 @@ spring:
           uri: https://github.com/realmadred/config-repo
           clone-on-start: true
 #          search-paths: config-repo
-#          basedir: E:/GitHub/2018/spring-boot-cloud/config-repo
+          basedir: /usr/local/feng/docker/cloud
   rabbitmq:
     host: rabbitmq
     username: feng
     password: feng
-    port: 5600
+    port: 5672
     cache:
       channel:
         size: 100

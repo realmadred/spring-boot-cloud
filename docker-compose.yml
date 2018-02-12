@@ -1,35 +1,63 @@
-version: '2'
+version: '3'
 services:
-  rabbitmq:
-      image: rabbitmq:3-management
-      restart: always
-      ports:
-        - 15673:15672
-  registry:
-    image: spring-boot-cloud/registry
-    ports:
-      - "8761:8761"
-  config:
-    image: spring-boot-cloud/config
-    ports:
-      - "8888:8888"
+#  rabbitmq:
+#      image: rabbitmq:3-management
+#      restart: always
+#      ports:
+#        - 15673:15672
+#        - 5672:5672
+#  registry:
+#    image: spring-boot-cloud/registry
+#    depends_on:
+#      - rabbitmq
+#    ports:
+#      - "8761:8761"
+#  config:
+#    image: spring-boot-cloud/config
+#    depends_on:
+#      - registry
+#    ports:
+#      - "8888:8888"
   monitor:
     image: spring-boot-cloud/monitor
+#    depends_on:
+#      - config
     ports:
       - "8040:8040"
   zipkin:
+#    depends_on:
+#      - config
     image: spring-boot-cloud/zipkin
     ports:
       - "9411:9411"
   gateway:
     image: spring-boot-cloud/gateway
+#    depends_on:
+#      - config
     ports:
       - "8060:8060"
   auth-service:
     image: spring-boot-cloud/auth-service
+#    depends_on:
+#      - registry
+#      - config
     ports:
       - "5000:5000"
   svca-service:
     image: spring-boot-cloud/svca-service
+#    depends_on:
+#      - registry
+#      - config
+#      - auth-service
+    ports:
+      - "8080:8080"
   svcb-service:
     image: spring-boot-cloud/svcb-service
+#    depends_on:
+#      - registry
+#      - config
+#      - auth-service
+    ports:
+      - "8070:8070"
+volumes:
+  db_data:

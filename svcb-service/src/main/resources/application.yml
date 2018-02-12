@@ -1,8 +1,8 @@
 spring:
   rabbitmq:
-    username: feng
-    password: feng
-    port: 5600
+#    username: feng
+#    password: feng
+    port: 5672
     host: rabbitmq
     cache:
       channel:
@@ -21,4 +21,11 @@ security:
       accessTokenUri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/oauth/token
       grant-type: client_credentials
       scope: server
+#    resource:
+#      user-info-uri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/current
+#
+#authserver:
+#  hostname: auth-service
+#  port: 5000
+#  contextPath: /uaa
 

@@ -7,6 +7,7 @@ spring:
         enabled: true
         service-id: config
       fail-fast: true
+#      uri: http://config:8888
       username: user
       password: ${CONFIG_SERVER_PASSWORD:password}
       retry:
@@ -29,3 +30,12 @@ security:
   user:
     name: user
     password: ${SERVICE_A_PASSWORD:password}
+#  oauth2:
+#    resource:
+#      user-info-uri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/current
+#
+#authserver:
+#  hostname: auth-service
+#  port: 5000
+#  contextPath: /uaa
+
