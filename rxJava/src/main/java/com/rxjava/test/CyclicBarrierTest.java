@@ -38,6 +38,7 @@ public class CyclicBarrierTest {
                     ,barrier.getNumberWaiting());
             try {
                 barrier.await();
+                LOGGER.info("{}运行了！",name);
             } catch (InterruptedException | BrokenBarrierException e) {
                 e.printStackTrace();
             }
