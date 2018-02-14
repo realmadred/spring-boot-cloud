@@ -11,15 +11,15 @@ public class CyclicBarrierTest {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(CyclicBarrierTest.class);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         final CyclicBarrier barrier = new CyclicBarrier(10, () -> LOGGER.info("都到齐了！"));
-        for (int i = 0; i < 10; i++) {
-            try {
-                TimeUnit.MILLISECONDS.sleep(10);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+        for (int i = 1; i <= 1000; i++) {
+            TimeUnit.MILLISECONDS.sleep(10);
             new Thread(new BarrierThread(barrier,"BarrierThread"+i)).start();
+//            if (i % 10 == 0){
+//                TimeUnit.SECONDS.sleep(1);
+//                barrier.reset();
+//            }
         }
     }
 
