@@ -18,14 +18,14 @@ spring:
 
 eureka:
   instance:
-    hostname: registry
-    prefer-ip-address: true
+ #   hostname: registry
+#    prefer-ip-address: true
     metadata-map:
       user.name: ${security.user.name}
       user.password: ${security.user.password}
   client:
     service-url:
-      defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:password}@registry:8761/eureka/
+      defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:password}@192.168.40.128:8761/eureka/
 
 security:
   user:

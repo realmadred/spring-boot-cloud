@@ -1,0 +1,16 @@
+version: '3'
+services:
+  monitor:
+    image: spring-boot-cloud/monitor
+    ports:
+      - "8040:8040"
+    extra_hosts:
+      - "registry:192.168.40.128"
+      - "rabbitmq:192.168.40.128"
+  zipkin:
+    image: spring-boot-cloud/zipkin
+    ports:
+      - "9411:9411"
+    extra_hosts:
+      - "registry:192.168.40.128"
+      - "rabbitmq:192.168.40.128"
