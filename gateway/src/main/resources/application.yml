@@ -21,7 +21,7 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 20000
+            timeoutInMilliseconds: 10000
 
 zuul:
   ignoredServices: '*'

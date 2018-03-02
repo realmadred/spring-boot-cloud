@@ -11,7 +11,7 @@ turbine:
 
 eureka:
   instance:
-    hostname: registry
+#    hostname: registry
 #   prefer-ip-address: true
     metadata-map:
       user.name: ${security.user.name}
