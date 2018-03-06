@@ -18,13 +18,13 @@ security:
     client:
       clientId: svcb-service
       clientSecret: ${security.user.password}
-      accessTokenUri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/oauth/token
+      accessTokenUri: http://${auth.hostname}:${auth.port}${auth.contextPath}/oauth/token
       grant-type: client_credentials
       scope: server
 #    resource:
-#      user-info-uri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/current
+#      user-info-uri: http://${auth.hostname}:${auth.port}${auth.contextPath}/current
 #
-#authserver:
+#auth:
 #  hostname: auth-service
 #  port: 5000
 #  contextPath: /uaa

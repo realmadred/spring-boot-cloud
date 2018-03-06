@@ -19,8 +19,8 @@ spring:
         git:
           uri: https://github.com/realmadred/config-repo.git
 #          clone-on-start: true
-#          search-paths: config-repo
-          basedir: /usr/local/feng/docker/cloud
+          search-paths: config-repo
+#          basedir: /usr/local/feng/docker/cloud
     bus:
       trace:
       #跟踪总线事件
