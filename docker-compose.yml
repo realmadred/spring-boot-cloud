@@ -20,6 +20,7 @@ services:
 #      - "8888:8888"
   monitor:
     image: spring-boot-cloud/monitor
+    restart: always
 #    depends_on:
 #      - config
     ports:
@@ -28,16 +29,19 @@ services:
 #    depends_on:
 #      - config
     image: spring-boot-cloud/zipkin
+    restart: always
     ports:
       - "9411:9411"
   gateway:
     image: spring-boot-cloud/gateway
+    restart: always
 #    depends_on:
 #      - config
     ports:
       - "8060:8060"
   auth-service:
     image: spring-boot-cloud/auth-service
+    restart: always
 #    depends_on:
 #      - registry
 #      - config
@@ -45,6 +49,7 @@ services:
       - "5000:5000"
   svca-service:
     image: spring-boot-cloud/svca-service
+    restart: always
 #    depends_on:
 #      - registry
 #      - config
@@ -57,6 +62,7 @@ services:
 #      - registry
 #      - config
 #      - auth-service
+    restart: always
     ports:
       - "8070:8070"
 volumes:
